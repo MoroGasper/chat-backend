@@ -4,7 +4,7 @@
   "description": "Chat de prueba con websockets",
   "main": "index.js",
   "scripts": {
-    "start": "babel-watch -L index.js",
+    "start": "DEBUG=chat-backend babel-watch -L index.js",
     "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/feardarkness/chat-backend#readme",
   "dependencies": {
+    "debug": "^2.6.0",
     "express": "^4.14.1",
     "socket.io": "^1.7.2"
   },
