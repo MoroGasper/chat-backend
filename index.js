@@ -16,5 +16,13 @@ server.listen(8081, () => {
 });
 
 io.on('connection', (socket) => {
-  debug('Socket conectado', socket);
+  debug('Alguien esta conectado!!!');
+
+  socket.emit('be-message', {
+    message: 'Bienvenido usuario!!!',
+  });
+
+  socket.on('fe-message', (data) => {
+    debug('Usuario conectado', data);
+  });
 });
