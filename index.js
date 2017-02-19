@@ -20,9 +20,11 @@ io.on('connection', (socket) => {
 
   socket.emit('be-message', {
     message: 'Bienvenido usuario!!!',
+    username: 'Servidor',
   });
 
   socket.on('fe-message', (data) => {
     debug('Usuario conectado', data);
+    io.emit('be-message', data);
   });
 });
