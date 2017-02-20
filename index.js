@@ -5,11 +5,16 @@ import express from 'express';
 import http from 'http';
 import debugModule from 'debug';
 import socketIO from 'socket.io';
+import { twitterRoutes } from './routes';
 
 const app = express();
 const server = http.Server(app);
 const io = socketIO(server);
 const debug = debugModule('chat-backend');
+
+
+app.use('/twitter', twitterRoutes);
+
 
 server.listen(8081, () => {
   debug('Servidor escuchando en el puerto 8081');
