@@ -1,3 +1,5 @@
 node_modules/
 .idea/
 configurations/twitter-config.js
+.nyc_output/
+coverage/
